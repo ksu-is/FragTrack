@@ -1,0 +1,14 @@
+#Full HTML Structure
+Player Name → <td class="sp__player position-relative">
+                <span class="text-truncate ml-4">
+                  <a href="/players/3749-aiden">Aiden</a>
+
+Rating      → <td class="sp__rating font-weight-bold sorting_2">
+KD          → <td class="sp__kd">
+Entry       → <td class="sp__ok text-nowrap">
+Maps        → <td class="sp__map_plays">
+KOST        → <td class="sp__kost js-heatmap-td">
+KPR         → <td class="sp__kpr js-heatmap-td">
+SRV         → <td class="sp__srv js-heatmap-td">
+Clutches    → <td class="sp__clutches">
+Plants      → <td class="sp__plants">
