@@ -33,11 +33,10 @@ def create_driver():
     )
     return driver
 
-# ─── Parse Operator Data ──────────────────────────────────────────────────────
 def parse_operators(html, year):
     """
     Extracts each player's most picked attack and defense
-    operator for the given year.
+    operator, plus their rating and KD for that year.
     """
     soup = BeautifulSoup(html, "html.parser")
     records = []
@@ -51,6 +50,14 @@ def parse_operators(html, year):
             if not name_tag:
                 continue
             name = name_tag.find("a").text.strip()
+
+            # Rating
+            rating_tag = row.find("td", class_=lambda c: c and "sp__rating" in c)
+            rating = float(rating_tag.text.strip()) if rating_tag else None
+
+            # KD
+            kd_tag = row.find("td", class_="sp__kd")
+            kd = kd_tag.text.strip() if kd_tag else None
 
             # Attack operator
             atk_td = row.find("td", class_=lambda c: c and "sp__atk" in c)
@@ -72,6 +79,8 @@ def parse_operators(html, year):
                 records.append({
                     "year": year,
                     "player": name,
+                    "rating": rating,
+                    "kd": kd,
                     "top_atk_operator": atk_operator,
                     "top_def_operator": def_operator
                 })
