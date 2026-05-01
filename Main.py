@@ -1,6 +1,6 @@
 # main.py
 # FragTrack - Rainbow Six Siege Professional Analytics Dashboard
-# Author: [Your Name]
+# Author: [Omar Idris]
 # Description: Reads real player data scraped from Siege.gg and runs
 #              three original analytical features
 
